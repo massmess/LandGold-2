@@ -1,27 +1,31 @@
-<!DOCTYPE html>
-<html lang="zh-hant-tw">
+<!DOCTYPE html><html lang="zh-hant-tw">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>成功路黃本家土地</title>
+
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 		}
+
 		.gallery {
 			display: flex;
 			flex-wrap: wrap;
 			gap: 10px;
 		}
+
 		.gallery img {
 			width: 250px;
 			cursor: pointer;
 			transition: transform 0.2s;
 		}
+
 		.gallery img:hover {
 			transform: scale(1.1);
 		}
+
 		.modal {
 			display: none;
 			position: fixed;
@@ -33,12 +37,14 @@
 			overflow: auto;
 			background-color: rgba(0, 0, 0, 0.8);
 		}
+
 		.modal-content {
 			margin: auto;
 			display: block;
 			width: 100%;
 			max-width: 2000px;
 		}
+
 		.close {
 			position: absolute;
 			top: 20px;
@@ -48,8 +54,8 @@
 			font-weight: bold;
 			transition: 0.3s;
 		}
-		.close:hover,
-		.close:focus {
+
+		.close:hover, .close:focus {
 			color: #bbb;
 			text-decoration: none;
 			cursor: pointer;
@@ -58,51 +64,48 @@
 </head>
 
 <body>
+	<h3>德鑫自有土地</h3>
 
-<h3>德鑫自有土地</h3>
+	<div class="gallery">
+		<img src="土地相關資料/德鑫自有土地/光華段422-1.png" alt="光華段422-1" title="光華段422-1">
+		<img src="土地相關資料/德鑫自有土地/光華段422-2.png" alt="光華段422-2" title="光華段422-2">
+	</div>
 
-<div class="gallery">
-	<img src="土地相關資料/德鑫自有土地/光華段422-1.png" alt="光華段422-1" title="光華段422-1">
-	<img src="土地相關資料/德鑫自有土地/光華段422-2.png" alt="光華段422-2" title="光華段422-2">
-</div>
+	<h3>本人自有土地</h3>
 
-<h3>本人自有土地</h3>
+	<div class="gallery">
+		<img src="土地相關資料/本人自有土地/光華段422.png" alt="光華段422" title="光華段422">
+		<img src="土地相關資料/本人自有土地/光華段423.png" alt="光華段423" title="光華段423">
+		<img src="土地相關資料/本人自有土地/光華段424.png" alt="光華段424" title="光華段424">
+		<img src="土地相關資料/本人自有土地/光華段424-1.png" alt="光華段424-1" title="光華段424-1">
+		<img src="土地相關資料/本人自有土地/光華段239.png" alt="光華段239" title="光華段239">
+	</div>
 
-<div class="gallery">
-	<img src="土地相關資料/本人自有土地/光華段422.png" alt="光華段422" title="光華段422">
-	<img src="土地相關資料/本人自有土地/光華段423.png" alt="光華段423" title="光華段423">
-	<img src="土地相關資料/本人自有土地/光華段424.png" alt="光華段424" title="光華段424">
-	<img src="土地相關資料/本人自有土地/光華段424-1.png" alt="光華段424-1" title="光華段424-1">
-	<img src="土地相關資料/本人自有土地/光華段239.png" alt="光華段239" title="光華段239">
-</div>
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+	</div>
 
-<div id="myModal" class="modal">
-	<span class="close">&times;</span>
-	<img class="modal-content" id="img01">
-</div>
+	<script>
+		const modal = document.getElementById("myModal");
+		const modalImg = document.getElementById("img01");
+		const closeBtn = document.getElementsByClassName("close")[0];
 
-<script>
-	const modal = document.getElementById("myModal");
-	const modalImg = document.getElementById("img01");
-	const closeBtn = document.getElementsByClassName("close")[0];
+		document.querySelectorAll(".gallery img").forEach(img => {
+			img.onclick = function() {
+				modal.style.display = "block";
+				modalImg.src = this.src;
+			}
+		});
 
-	document.querySelectorAll(".gallery img").forEach(img => {
-		img.onclick = function() {
-			modal.style.display = "block";
-			modalImg.src = this.src;
-		}
-	});
-
-	closeBtn.onclick = function() {
-		modal.style.display = "none";
-	}
-
-	window.onclick = function(event) {
-		if (event.target == modal) {
+		closeBtn.onclick = function() {
 			modal.style.display = "none";
 		}
-	}
-</script>
 
-</body>
-</html>
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+</body></html>
